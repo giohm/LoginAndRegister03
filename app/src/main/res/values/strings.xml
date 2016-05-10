@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LoginAndRegister02</string>
+    <string name="edTx_username_hint">user name</string>
+    <string name="edTx_password_hint">password</string>
+    <string name="btn_login_text">log in</string>
+    <string name="txVw_link_to_register">Register Here</string>
+    <string name="btn_register_text">register</string>
+    <string name="edTx_repeat_password_hint">re-enter password</string>
+</resources>
