@@ -1,6 +1,8 @@
 package seniordesign.loginandregister02;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -14,14 +16,27 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class LoginFragment extends Fragment {
+public class LoginFragment extends Fragment implements View.OnClickListener{
 
+    TextView textView;
+    Communicator comm;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_login, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_login, container, false);
     }
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        comm = (Communicator) getActivity();
+        textView = (TextView) getActivity().findViewById(R.id.tv_register_here);
+        textView.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        comm.respond();
+    }
 }
